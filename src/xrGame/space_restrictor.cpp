@@ -69,7 +69,7 @@ bool CSpaceRestrictor::net_Spawn(CSE_Abstract* data)
 
     CCustomZone* zone = smart_cast<CCustomZone*>(this);
     if (g_ai_die_in_anomaly == 0 || !zone || smart_cast<CRadioactiveZone*>(zone))
-        spatial.type &= ~STYPE_VISIBLEFORAI;
+        // NPC's perception for anomalies has been restored
 
     setEnabled(FALSE);
     setVisible(FALSE);
