@@ -161,7 +161,10 @@ void CWeapon::UpdateXForm()
     if ((HandDependence() == hd1Hand) || (GetState() == eReload) || (!E->g_Alive()))
         boneL = boneR2;
 
-    V->CalculateBones();
+    // от mortan:
+	// https://www.gameru.net/forum/index.php?s=&showtopic=23443&view=findpost&p=1677678
+	V->CalculateBones_Invalidate();
+	V->CalculateBones( true ); //V->CalculateBones	();
     Fmatrix& mL = V->LL_GetTransform(u16(boneL));
     Fmatrix& mR = V->LL_GetTransform(u16(boneR));
     // Calculate
